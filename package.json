@@ -4,10 +4,7 @@
   "description": "Equatorial Guinea job finder app",
   "main": "index.js",
   "scripts": {
-    "start-node": "nodemon index.js",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "start": "nodemon index.js"
   },
   "keywords": [
     "equatorial",
