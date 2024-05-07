@@ -1,0 +1,1119 @@
+{
+	"info": {
+		"_postman_id": "064aa56b-d2de-4e90-a528-2cf98fa1c511",
+		"name": "Jobhub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21899452",
+		"_collection_link": "https://www.postman.com/gold-capsule-201020/workspace/dbestech-backends/collection/21899452-064aa56b-d2de-4e90-a528-2cf98fa1c511?action=share&source=collection_link&creator=21899452"
+	},
+	"item": [
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Elsa\",\n    \"email\": \"elsa@gmail.com\",\n    \"password\": \"Elsa123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}register",
+							"host": [
+								"{{URL}}register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"pedro@gmail.com\",\n    \"password\": \"Pedro123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}login",
+							"host": [
+								"{{URL}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD SKILLS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDVjZmVhNzhlNDk4NjgzZWNiN2I5OSIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50Ijp0cnVlLCJpYXQiOjE2OTUyMjUzMzcsImV4cCI6MTY5NzAzOTczN30.N3L9Efs8Gi2GwFCd-4_hvZlI3TfUWKQKP0f-dYD1dXc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"skill\": \"Flutter and Dart\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users/skills",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"skills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SKILLS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDVjZmVhNzhlNDk4NjgzZWNiN2I5OSIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50Ijp0cnVlLCJpYXQiOjE2OTUyMjUzMzcsImV4cCI6MTY5NzAzOTczN30.N3L9Efs8Gi2GwFCd-4_hvZlI3TfUWKQKP0f-dYD1dXc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users/skills",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"skills"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIzYWU0YjY4ZWI2NzhlNGQwODI5MyIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODM3MTA1MDgsImV4cCI6MTY4NTUyNDkwOH0.AkoCcy-GebrAPfmjO8lCkFwIPLKW6D_I7p7mgGVwzXo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Natividad Eyang\",\n    \"email\": \"nati@gmail.com\",\n    \"password\": \"Nati123\",\n    \"isAdmin\": true,\n    \"isAgent\": false,\n    \"skills\": [\n        \"Node JS\",\n        \"Java\",\n        \"Flutter\",\n        \"Dart\"\n    ],\n    \"profile\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/4821d814-ac87-4b22-aa80-ac7336916c9a-403017_avatar_default_head_person_unknown_icon.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users/645b3ae4b68eb678e4d08293",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"645b3ae4b68eb678e4d08293"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE USER",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWIzYWU0YjY4ZWI2NzhlNGQwODI5MyIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50IjpmYWxzZSwiaWF0IjoxNjgzNzA4NDM5LCJleHAiOjE2ODU1MjI4Mzl9.8SKBemvMaL0ylr58g_XiYyyt7uKtho7hqE1v03CumIg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Andre Kin\",\n    \"email\": \"andreking2@debestech.com\",\n    \"password\": \"1234567\",\n    \"isAdmin\": true,\n    \"isAgent\": false,\n    \"skills\": [\n        \"Node JS\",\n        \"Java\",\n        \"Flutter\"\n    ],\n    \"profile\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/4821d814-ac87-4b22-aa80-ac7336916c9a-403017_avatar_default_head_person_unknown_icon.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users/645b3ae4b68eb678e4d08293",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"645b3ae4b68eb678e4d08293"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDVjZmVhNzhlNDk4NjgzZWNiN2I5OSIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50Ijp0cnVlLCJpYXQiOjE2OTUyMjUzMzcsImV4cCI6MTY5NzAzOTczN30.N3L9Efs8Gi2GwFCd-4_hvZlI3TfUWKQKP0f-dYD1dXc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODQ0MDM2MTEsImV4cCI6MTY4NjIxODAxMX0._mwL0wmkb_5L31KjvO7erAPmaVR0wHCX_KHZ_KTzBAQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Andre King\",\n    \"email\": \"dre@dbestech.com\",\n    \"password\": \"password123\",\n    \"isAdmin\": false,\n    \"isAgent\": false,\n    \"skills\": [\n        \"Node JS\",\n        \"Java\",\n        \"Flutter\"\n    ],\n    \"profile\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/bdec9d7d-0544-4fc4-823d-3b898f6dbbbf-vinci_03.jpeg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users",
+							"host": [
+								"{{URL}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USER",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzM1M2YxZTJkMzE4ZGUwZGM0NTAzNiIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50IjpmYWxzZSwiaWF0IjoxNjkwNjA0OTU5LCJleHAiOjE2OTI0MTkzNTl9.fboj3LfcuK3EazqENtTPltRWhDFkG1VHitnWJAmV7dI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Andre Kin\",\n    \"email\": \"andreking2@debestech.com\",\n    \"password\": \"1234567\",\n    \"isAdmin\": true,\n    \"isAgent\": false,\n    \"skills\": [\n        \"Node JS\",\n        \"Java\",\n        \"Flutter\"\n    ],\n    \"profile\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/4821d814-ac87-4b22-aa80-ac7336916c9a-403017_avatar_default_head_person_unknown_icon.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users/",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Firebase auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dre2@gmail.com\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Firebase login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dre1@gmail.com\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JOBS",
+			"item": [
+				{
+					"name": "CREATE JOB",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDVjZmVhNzhlNDk4NjgzZWNiN2I5OSIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50Ijp0cnVlLCJpYXQiOjE2OTUxNTA0MzAsImV4cCI6MTY5Njk2NDgzMH0.ALQheBsXTKjqgj2tcW6n-6gxbjRDo3022LdCJNwEjwg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODM3MTYzMDUsImV4cCI6MTY4NTUzMDcwNX0.gUJHdoz2U6TLVs5dihUzl8w9Hhh5YKcCqzcTyp6Mszw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Snr Java Developer\",\n    \"location\": \"Miami\",\n    \"company\": \"Facebook\",\n    \"description\": \"dkfhjkfghkjfhgkfjgh\",\n    \"salary\": \"24k\",\n    \"contract\": \"Full-Time\",\n    \"hiring\": true,\n    \"period\": \"monthly\",\n    \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/4821d814-ac87-4b22-aa80-ac7336916c9a-403017_avatar_default_head_person_unknown_icon.png\",\n    \"agentId\": \"645b76ccb77c85d5e1740baa\",\n    \"requirements\": [\n        \"1. requirements\",\n        \"2. requirements\",\n        \"3. requirements\",\n        \"4. requirements\",\n        \"5. requirements\",\n        \"6. requirements\"\n    ]\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}jobs",
+							"host": [
+								"{{URL}}jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE JOB",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODM3MTYzMDUsImV4cCI6MTY4NTUzMDcwNX0.gUJHdoz2U6TLVs5dihUzl8w9Hhh5YKcCqzcTyp6Mszw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Flutter Developer\",\n    \"location\": \"Califonia\",\n    \"company\": \"GOOGLE\",\n    \"description\": \"hjhkhljljflhgjhfgkjfhgf\",\n    \"salary\": \"24k\",\n    \"contract\": \"Full-Time\",\n    \"hiring\": true,\n    \"period\": \"YEARLY\",\n    \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/4821d814-ac87-4b22-aa80-ac7336916c9a-403017_avatar_default_head_person_unknown_icon.png\",\n    \"agentId\": \"645b76ccb77c85d5e1740baa\",\n    \"requirements\": [\n        \"1. requirements\",\n        \"2. requirements\",\n        \"3. requirements\",\n        \"4. requirements\",\n        \"5. requirements\",\n        \"6. requirements\"\n    ]\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}jobs/645b89d2f39a4f0fbb497f0a",
+							"host": [
+								"{{URL}}jobs"
+							],
+							"path": [
+								"645b89d2f39a4f0fbb497f0a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE JOB",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODM3MTYzMDUsImV4cCI6MTY4NTUzMDcwNX0.gUJHdoz2U6TLVs5dihUzl8w9Hhh5YKcCqzcTyp6Mszw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Flutter Developer\",\n    \"location\": \"Califonia\",\n    \"company\": \"GOOGLE\",\n    \"description\": \"hjhkhljljflhgjhfgkjfhgf\",\n    \"salary\": \"24k\",\n    \"contract\": \"Full-Time\",\n    \"hiring\": true,\n    \"period\": \"YEARLY\",\n    \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/4821d814-ac87-4b22-aa80-ac7336916c9a-403017_avatar_default_head_person_unknown_icon.png\",\n    \"agentId\": \"645b76ccb77c85d5e1740baa\",\n    \"requirements\": [\n        \"1. requirements\",\n        \"2. requirements\",\n        \"3. requirements\",\n        \"4. requirements\",\n        \"5. requirements\",\n        \"6. requirements\"\n    ]\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}jobs/645b89d2f39a4f0fbb497f0a",
+							"host": [
+								"{{URL}}jobs"
+							],
+							"path": [
+								"645b89d2f39a4f0fbb497f0a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET JOB",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODM3MTYzMDUsImV4cCI6MTY4NTUzMDcwNX0.gUJHdoz2U6TLVs5dihUzl8w9Hhh5YKcCqzcTyp6Mszw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}jobs/645b8db2cddb17870c7ece99",
+							"host": [
+								"{{URL}}jobs"
+							],
+							"path": [
+								"645b8db2cddb17870c7ece99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SEARCH JOB",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODM3MTYzMDUsImV4cCI6MTY4NTUzMDcwNX0.gUJHdoz2U6TLVs5dihUzl8w9Hhh5YKcCqzcTyp6Mszw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}jobs/search/Flutter",
+							"host": [
+								"{{URL}}jobs"
+							],
+							"path": [
+								"search",
+								"Flutter"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL JOB",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODM3MTYzMDUsImV4cCI6MTY4NTUzMDcwNX0.gUJHdoz2U6TLVs5dihUzl8w9Hhh5YKcCqzcTyp6Mszw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}jobs",
+							"host": [
+								"{{URL}}jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET RCOMMENDATIONS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODM3MTYzMDUsImV4cCI6MTY4NTUzMDcwNX0.gUJHdoz2U6TLVs5dihUzl8w9Hhh5YKcCqzcTyp6Mszw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}jobs/recommendations",
+							"host": [
+								"{{URL}}jobs"
+							],
+							"path": [
+								"recommendations"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BOOKMARKS",
+			"item": [
+				{
+					"name": "CREATE BOOKMARK",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODQ0NzM2NTIsImV4cCI6MTY4NjI4ODA1Mn0.KEN5PoNl3VWghehgcPEwaniN2MHR7zsShnILJIrxq0w",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"job\": \"645b894ef39a4f0fbb497f08\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}bookmarks",
+							"host": [
+								"{{URL}}bookmarks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE BOOKMARK",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODM3MjU4NzMsImV4cCI6MTY4NTU0MDI3M30._FguqbFLjXiWhAvJKVFRezuYDSwgEuodV32L591PysE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": \"645b76ccb77c85d5e1740baa\",\n    \"location\": \"Miami\",\n    \"company\": \"Facebook\",\n    \"job\": \"645b8db2cddb17870c7ece99\",\n    \"title\": \"Snr Java Developer\",\n    \"imageUrl\": \"https://d326fntlu7tb1e.cloudfront.net/uploads/4821d814-ac87-4b22-aa80-ac7336916c9a-403017_avatar_default_head_person_unknown_icon.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}bookmarks\\6502ebafa51bda5dfbf78fa6",
+							"host": [
+								"{{URL}}bookmarks"
+							],
+							"path": [
+								"6502ebafa51bda5dfbf78fa6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USER BOOKMARKS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODM3MjU4NzMsImV4cCI6MTY4NTU0MDI3M30._FguqbFLjXiWhAvJKVFRezuYDSwgEuodV32L591PysE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}bookmarks",
+							"host": [
+								"{{URL}}bookmarks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET BOOKMARK",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWI3NmNjYjc3Yzg1ZDVlMTc0MGJhYSIsImlzQWRtaW4iOnRydWUsImlzQWdlbnQiOmZhbHNlLCJpYXQiOjE2ODM3MjU4NzMsImV4cCI6MTY4NTU0MDI3M30._FguqbFLjXiWhAvJKVFRezuYDSwgEuodV32L591PysE",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}bookmarks/bookmark",
+							"host": [
+								"{{URL}}bookmarks"
+							],
+							"path": [
+								"bookmark"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDVjZmVhNzhlNDk4NjgzZWNiN2I5OSIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50Ijp0cnVlLCJpYXQiOjE2OTUxNTA0MzAsImV4cCI6MTY5Njk2NDgzMH0.ALQheBsXTKjqgj2tcW6n-6gxbjRDo3022LdCJNwEjwg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "CHATS",
+			"item": [
+				{
+					"name": "GET CHATS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzM1M2YxZTJkMzE4ZGUwZGM0NTAzNiIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50IjpmYWxzZSwiaWF0IjoxNjkwNjA0OTU5LCJleHAiOjE2OTI0MTkzNTl9.fboj3LfcuK3EazqENtTPltRWhDFkG1VHitnWJAmV7dI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}chats",
+							"host": [
+								"{{URL}}chats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACCESS | CREATE CHATS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzM1M2YxZTJkMzE4ZGUwZGM0NTAzNiIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50IjpmYWxzZSwiaWF0IjoxNjkwNjA0OTU5LCJleHAiOjE2OTI0MTkzNTl9.fboj3LfcuK3EazqENtTPltRWhDFkG1VHitnWJAmV7dI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"64c367f3b7f46842e9502e21\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}chats",
+							"host": [
+								"{{URL}}chats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MESSAGES",
+			"item": [
+				{
+					"name": "SENT MESSAGE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzM1M2YxZTJkMzE4ZGUwZGM0NTAzNiIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50IjpmYWxzZSwiaWF0IjoxNjkwNjA0OTU5LCJleHAiOjE2OTI0MTkzNTl9.fboj3LfcuK3EazqENtTPltRWhDFkG1VHitnWJAmV7dI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"Hello, this is a message\",\n    \"recipient\": \"64c353f1e2d318de0dc45036\",\n    \"chat_id\": \"64c498460b385055bb83d5f8\",\n    \"time\": \"2023-07-28T10:28:28.066Z\",\n    \"message_type\": \"text\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}messages",
+							"host": [
+								"{{URL}}messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET MESSAGES",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YzM1M2YxZTJkMzE4ZGUwZGM0NTAzNiIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50IjpmYWxzZSwiaWF0IjoxNjkwNjA0OTU5LCJleHAiOjE2OTI0MTkzNTl9.fboj3LfcuK3EazqENtTPltRWhDFkG1VHitnWJAmV7dI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}messages/64c498460b385055bb83d5f8",
+							"host": [
+								"{{URL}}messages"
+							],
+							"path": [
+								"64c498460b385055bb83d5f8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AGENTS",
+			"item": [
+				{
+					"name": "GET AGENTS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}users/agents",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"agents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET AGENT",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}users/agents/M66BoxHyoBVZf0ohmUSJH9wvj3f1",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"agents",
+								"M66BoxHyoBVZf0ohmUSJH9wvj3f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AGENTS DETAILS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uid\": \"M66BoxHyoBVZf0ohmUSJH9wvj3f1\",\n    \"company\": \"Acme Inc.\",\n    \"hq_address\": \"123 Main Street, Cityville\",\n    \"working_hrs\": \"9:00 AM - 5:00 PM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users/agents",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"agents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE AGENTS DETAILS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDVjZmVhNzhlNDk4NjgzZWNiN2I5OSIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50Ijp0cnVlLCJpYXQiOjE2OTUyMjUzMzcsImV4cCI6MTY5NzAzOTczN30.N3L9Efs8Gi2GwFCd-4_hvZlI3TfUWKQKP0f-dYD1dXc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uid\": \"M66BoxHyoBVZf0ohmUSJH9wvj3f1\",\n    \"company\": \"Acme Inc.\",\n    \"hq_address\": \"123 Main Street, Cityville\",\n    \"working_hrs\": \"9:00 AM - 5:00 PM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}users/agents",
+							"host": [
+								"{{URL}}users"
+							],
+							"path": [
+								"agents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET AGENTJOBS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}jobs/agent/64c367f3b7f46842e9502e21",
+							"host": [
+								"{{URL}}jobs"
+							],
+							"path": [
+								"agent",
+								"64c367f3b7f46842e9502e21"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDVjZmVhNzhlNDk4NjgzZWNiN2I5OSIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50Ijp0cnVlLCJpYXQiOjE2OTUyMjUzMzcsImV4cCI6MTY5NzAzOTczN30.N3L9Efs8Gi2GwFCd-4_hvZlI3TfUWKQKP0f-dYD1dXc",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "APPLICATIONS",
+			"item": [
+				{
+					"name": "GET APPLIED",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}applied",
+							"host": [
+								"{{URL}}applied"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD APPLIED",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"job\": \"645b8db2cddb17870c7ece99\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}applied",
+							"host": [
+								"{{URL}}applied"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MDVjZmVhNzhlNDk4NjgzZWNiN2I5OSIsImlzQWRtaW4iOmZhbHNlLCJpc0FnZW50Ijp0cnVlLCJpYXQiOjE2OTQ5ODQ1MTQsImV4cCI6MTY5Njc5ODkxNH0.ajsA3TnIOx6i9doZOwQbtUXYiinZgH7itK1QdZKsaJI",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
